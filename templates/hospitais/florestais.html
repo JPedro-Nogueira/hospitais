@@ -1,0 +1,63 @@
+{% extends 'hospitais/base.html' %}
+
+{% block content %}
+
+<div class="container pb-5">
+    <table class="table table-responsive-lg table-responsive-sm table-responsive-md mb-5">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ano</th>
+                <th>Cultura</th>
+                <th>Espécie</th>
+                <th>Estado</th>
+                <th>Área Reflorestada</th>
+                {% if user.is_authenticated %}
+                <th>Editar</th>
+                <th>Excluir</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for floresta in florestais %}
+            <tr>
+                <td>{{floresta.id}}</td>
+                <td>{{floresta.ano_floresta}}</td>
+                <td>{{floresta.cultura_floresta}}</td>
+                <td>{{floresta.especie_floresta}}</td>
+                <td>{{floresta.estado_floresta}}</td>
+                <td>{{floresta.area_floresta}}</td>
+
+                {% if user.is_authenticated %}
+                <td><a href="{% url 'editar' floresta.id %}" class="btn btn-warning">Editar</a></td>
+                <td><a href="{% url 'deletar' floresta.id %}" class="btn btn-danger">Excluir</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

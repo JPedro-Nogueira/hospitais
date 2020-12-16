@@ -1,0 +1,25 @@
+{% extends "hospitais/base.html"%}
+
+{% block content %}
+
+<div class="container col-lg-5">
+    <div class="row">
+        <a href="{% url 'criar_usuario' %}" class="btn btn-dark col-lg-4 pt-5 pb-5 mb-2 mr-2">
+            <i class="material-icons align-middle" style="font-size:48px;color:blue">add_box</i>
+            Criar Usuário</a>
+
+        <a href="{% url 'criar_floresta' %}" class="btn btn-dark col-lg-4 pt-5 pb-5 mb-2">
+            <i class="material-icons align-middle" style="font-size:48px;color:green">fiber_new</i>
+            Inserir Reflorestamento</a>
+
+        <a href="{% url 'florestais' %}" class="btn btn-dark col-lg-4 pt-5 pb-5 mb-2 mr-2">
+            <i class="material-icons align-middle" style="font-size:48px;color:green">airplay</i>
+            Ver Dados Cadastrados</a>
+
+        <a href="{% url 'florestais' %}" class="btn btn-dark col-lg-4 pt-5 pb-5 mb-2">
+            <i class="material-icons align-middle" style="font-size:48px;color:green">remove_from_queue</i>
+            Editar Dados Cadastrados</a>
+    </div>
+</div>
+
+{% endblock content %}
